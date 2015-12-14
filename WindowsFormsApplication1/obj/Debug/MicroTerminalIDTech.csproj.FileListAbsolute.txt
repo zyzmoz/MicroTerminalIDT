@@ -1,0 +1,11 @@
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\MicroTerminalIDTech.csprojResolveAssemblyReference.cache
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_main.resources
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\MicroTerminalIDTech.csproj.GenerateResource.Cache
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\MicroTerminalIDTech.exe.config
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\MicroTerminalIDTech.exe
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\MicroTerminalIDTech.pdb
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\MicroTerminalIDTech.exe
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\MicroTerminalIDTech.pdb

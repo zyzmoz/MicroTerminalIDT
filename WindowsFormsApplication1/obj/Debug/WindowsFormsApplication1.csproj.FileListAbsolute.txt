@@ -1,0 +1,18 @@
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_main.resources
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+c:\users\prog1\documents\visual studio 2012\Projects\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_main.resources
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Fontes\MicroTerminalIDT\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
