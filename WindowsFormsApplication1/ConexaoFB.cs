@@ -13,7 +13,9 @@ namespace WindowsFormsApplication1
     {
         static FbConnection fbCnn;
         static FbCommandBuilder fbCmm = new FbCommandBuilder();
-        //Getter and setters
+
+        
+        //Getter and setters      
         public static FbConnection FbCnn
         {
                get{return fbCnn;}
@@ -62,19 +64,63 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public static String VerificaOperador(String codigo)
+        {
+            FbCommand cmd = new FbCommand("SELECT NOME FROM OPERADOR WHERE CONTROLE = " + codigo, fbCnn);
+            FbDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+
+            try
+            {
+                return reader.GetString(0);
+            }
+            catch
+            {
+                return "";
+            }
+
+        }
+
+
+        public static String VerificaProduto(String codigo)
+        {
+            FbCommand cmd = new FbCommand("SELECT coalesce(DESCRICAO,'') FROM PRODUTOS WHERE CODBARRAS = '" + codigo +"'", FbCnn);
+
+            FbDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            try {
+                return reader.GetString(0);
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public static FbDataReader getTerminal()
+        {
+            FbCommand cmd = new FbCommand("SELECT IP FROM terminaisIDT ", FbCnn);
+            FbDataReader reader = cmd.ExecuteReader();
+
+            return reader;
+            
+        }
+
+
         public static void AcertaBase()
         {
-          /*  try
-                {
-                FbTransaction transaction = fbCnn.BeginTransaction();
-                FbCommand cmd = new FbCommand("create table terminaisIDT(IP varchar(14) primary key not null);", fbCnn, transaction);
+            FbTransaction transaction = fbCnn.BeginTransaction();
+            FbCommand cmd = new FbCommand("create table terminaisIDT(IP varchar(14) primary key not null);", fbCnn, transaction);
+            try
+            {                      
                 cmd.ExecuteNonQuery();
                 transaction.Commit();
             }
-                catch
-                {
-                //nono
-            }*/
+            catch
+            {
+                transaction.Rollback();
+            }
+               
         }
 
         public static void Add(String Ip)

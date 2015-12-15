@@ -15,6 +15,8 @@ namespace WindowsFormsApplication1
         public Int32 nrPorta = 6550;//PORTA DE COMUNICAÇÃO COM O MICROTERMINAL.
         public String AceptP = "192.168.1.100";//IP DO MICROTERMINAL.
         public ObjTerminal[] Terminais;//ARRAY DE OBJETOS MICROTERMINAIS.
+        public TcpListener MyListener;
+        public String[] IP;
 
         public event EventHandler OnConnect;//ENVENTO A SER DIPARADO QUANDO O OUVINTE ESCUTA UMA CONEXÃO.
         private Thread Server;//THREAD SERVER PARA ESCUTAR UMA CONEXÃO.
@@ -48,8 +50,11 @@ namespace WindowsFormsApplication1
             //Tenta receber conexões na porta especificada
             try
             {
-                TcpListener MyListener = new TcpListener(new IPAddress(0), nrPorta);//Cria um listener para escutar uma determinada porta.
-                MyListener.Start();//Inicia o listener(ouvinte)
+                if (MyListener == null)
+                {
+                    MyListener = new TcpListener(new IPAddress(0), nrPorta);//Cria um listener para escutar uma determinada porta.
+                    MyListener.Start();//Inicia o listener(ouvinte)
+                }
                 
                 //Mantem o objeto executando em um loop infinito (Até o fim da aplicação)
                 while (true)

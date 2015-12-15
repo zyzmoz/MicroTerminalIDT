@@ -68,7 +68,7 @@ namespace WindowsFormsApplication1
                         modem.Terminais[0].setOperador(modem.Terminais[0].getOperador().Substring(0, modem.Terminais[0].getOperador().Length - 1));
                         modem.Terminais[0].Display(e.ToString());
                     }
-                    if ((modem.Terminais[0].getOperador() != "") && (e.ToString() == "\r") && (modem.Terminais[0].getOperador() != "0"))
+                    if ((modem.Terminais[0].getOperador() != "") && (e.ToString() == "\r") && (modem.Terminais[0].getOperador() != "0") && (ConexaoFB.VerificaOperador(modem.Terminais[0].getOperador()) != ""))
                     {
                         modem.Terminais[0].isOpSelected = true;
                         modem.Terminais[0].ClearDisplay();
@@ -76,6 +76,20 @@ namespace WindowsFormsApplication1
                         modem.Terminais[0].Cursor(2, 1);
                         modem.Terminais[0].Display("Informe Cartao!!!");
                         modem.Terminais[0].Cursor(1, 8);
+                    }
+                    else
+                    {
+                        if ((modem.Terminais[0].getOperador() != "") && (e.ToString() == "\r") && (modem.Terminais[0].getOperador() != "0") && (ConexaoFB.VerificaOperador(modem.Terminais[0].getOperador()) == ""))
+                        {
+                            modem.Terminais[0].ClearDisplay();
+                            modem.Terminais[0].Display("Operador Invalido!");
+                            modem.Terminais[0].setOperador("");
+                            modem.Terminais[0].ClearDisplay();
+                            modem.Terminais[0].Display("Opr.:");
+                            modem.Terminais[0].Cursor(2, 1);
+                            modem.Terminais[0].Display("Informe Operador!!!");
+                            modem.Terminais[0].Cursor(1, 6);
+                        }
                     }
                 }
 
@@ -94,13 +108,28 @@ namespace WindowsFormsApplication1
                         modem.Terminais[0].setCartao(modem.Terminais[0].getCartao().Substring(0, modem.Terminais[0].getCartao().Length - 1));
                         modem.Terminais[0].Display(e.ToString());
                     }
-                    if ((modem.Terminais[0].getCartao() != "") && (e.ToString() == "\r") && (modem.Terminais[0].getCartao() != "0"))
+                    if ((modem.Terminais[0].getCartao() != "") && (e.ToString() == "\r") && (modem.Terminais[0].getCartao() != "0") && (Convert.ToInt32(modem.Terminais[0].getCartao()) <= Convert.ToInt32(ed_numComandas.Text)))
                     {
                         modem.Terminais[0].isCrSelected = true;
                         modem.Terminais[0].ClearDisplay();
-                        modem.Terminais[0].Display("Cartao:" + modem.Terminais[0].getCartao() + " Op:");
+                        modem.Terminais[0].Display("Cartao:" + modem.Terminais[0].getCartao() + " Op:"+ ConexaoFB.VerificaOperador(modem.Terminais[0].getOperador()));
                         modem.Terminais[0].Cursor(2, 1);
                         modem.Terminais[0].Display("Prod:");
+                    }
+                    else
+                    {
+                        if ((modem.Terminais[0].getCartao() != "") && (e.ToString() == "\r") && (modem.Terminais[0].getCartao() != "0") && (Convert.ToInt32(modem.Terminais[0].getCartao()) > Convert.ToInt32(ed_numComandas.Text)))
+                        {
+                            modem.Terminais[0].ClearDisplay();
+                            modem.Terminais[0].Display("Cartao Invalido!");
+                            modem.Terminais[0].setCartao("");
+                            modem.Terminais[0].ClearDisplay();
+                            modem.Terminais[0].Display("Cartao:");
+                            modem.Terminais[0].Cursor(2, 1);
+                            modem.Terminais[0].Display("Informe Cartao!!!");
+                            modem.Terminais[0].Cursor(1, 8);
+                        }
+
                     }
 
 
@@ -109,7 +138,7 @@ namespace WindowsFormsApplication1
                 {
                     if (modem.Terminais[0].isQtSelected)
                     {
-                        //modem.Terminais[0].isQtSelected = false;
+                        
                         if ((e.ToString() != "\b") && (e.ToString() != "\r") && (e.ToString() != "\u007f") && (e.ToString() != ".") && (e.ToString() != ","))
                         {
                             modem.Terminais[0].Display(e.ToString());
@@ -142,13 +171,27 @@ namespace WindowsFormsApplication1
                         modem.Terminais[0].Display(e.ToString());
                     }
 
-                    if ((e.ToString() == "\r") && (modem.Terminais[0].getProduto() != ""))
+                    if ((e.ToString() == "\r") && (modem.Terminais[0].getProduto() != "") && (ConexaoFB.VerificaProduto(modem.Terminais[0].getProduto()) != ""))
                     {
                         modem.Terminais[0].isProdutoSelected = true;
-                        modem.Terminais[0].ClearDisplay();
-                        modem.Terminais[0].Display("Prod:" + "Produto");
+                        modem.Terminais[0].ClearDisplay();                        
+                        modem.Terminais[0].Display("Prod:" + ConexaoFB.VerificaProduto(modem.Terminais[0].getProduto()));
                         modem.Terminais[0].Cursor(2, 1);
                         modem.Terminais[0].Display("Qtde:");
+                    }
+                    else
+                    {
+                        if ((e.ToString() == "\r") && (modem.Terminais[0].getProduto() != "") && (ConexaoFB.VerificaProduto(modem.Terminais[0].getProduto()) == ""))
+                        {
+                            modem.Terminais[0].ClearDisplay();
+                            modem.Terminais[0].Display("Produto Invalido!!!");
+                            modem.Terminais[0].setProduto("");
+                            modem.Terminais[0].ClearDisplay();
+                            modem.Terminais[0].Display("Cartao:" + modem.Terminais[0].getCartao() + " Op:"+ ConexaoFB.VerificaOperador(modem.Terminais[0].getOperador()));
+                            modem.Terminais[0].Cursor(2, 1);
+                            modem.Terminais[0].Display("Prod:");
+                        }
+
                     }
                 }
 
@@ -189,7 +232,7 @@ namespace WindowsFormsApplication1
                         modem.Terminais[0].setProduto("");
                         modem.Terminais[0].setQuantidade("0");
                         modem.Terminais[0].ClearDisplay();
-                        modem.Terminais[0].Display("Cartao:" + modem.Terminais[0].getCartao() + " Op:");
+                        modem.Terminais[0].Display("Cartao:" + modem.Terminais[0].getCartao() + " Op:" + ConexaoFB.VerificaOperador(modem.Terminais[0].getOperador()));
                         modem.Terminais[0].Cursor(2, 1);
                         modem.Terminais[0].Display("Prod:");
                     }
@@ -236,7 +279,7 @@ namespace WindowsFormsApplication1
         {
             DialogResult dlg = MessageBox.Show("Deseja Realmente Fechar a Aplicação?", "Aviso!", MessageBoxButtons.YesNo);
             if (dlg == DialogResult.Yes)             
-                System.Windows.Forms.Application.Exit();                  
+               Environment.Exit(Environment.ExitCode);               
             
 
         }
@@ -267,8 +310,22 @@ namespace WindowsFormsApplication1
             ConexaoFB.AcertaBase();
 
             dataGridView1.DataSource = ConexaoFB.Load();
+
+            FbDataReader reader = ConexaoFB.getTerminal();
+
+            while (reader.Read())
+            {
+                try {
+                    modem.Start(6550, reader.GetString(0));
+                }
+                catch
+                {
+                    //TO-DO
+                }
+            }
             
-            modem.Start(6550, "192.168.0.199");
+            
+            
 
         }
 
